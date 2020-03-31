@@ -12,9 +12,37 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
+    
+    // 文字列コピー
+    func copyString() {
+        UIPasteboard.general.string = "コピーしたい文字列"
+        print(UIPasteboard.general.string!)
+    }
+    
+    // 画像コピー単数
+    func copyImage() {
+        UIPasteboard.general.image = UIImage(named: "flower")
+        print(UIPasteboard.general.image!)
+    }
+    
+    // 画像コピー複数
+    func copyImage2() {
+        UIPasteboard.general.images = [UIImage(named: "road")!, UIImage(named: "wave")!]
+        print(UIPasteboard.general.images!)
+    }
+    
+    @IBAction func copyStringButtonTapped() {
+        copyString()
+    }
+    
+    @IBAction func copyImageButtonTapped() {
+        copyImage()
+    }
+    
+    @IBAction func copyImage2ButtonTapped() {
+        copyImage2()
+    }
 
 }
 
